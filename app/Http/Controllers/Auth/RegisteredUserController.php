@@ -35,6 +35,7 @@ class RegisteredUserController extends Controller
             'npk' => ['required', 'string', 'numeric', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'posisi' => ['required', 'string'],
+            'department' => ['required', 'string'],
         ]);
 
         $user = User::create([
@@ -42,6 +43,7 @@ class RegisteredUserController extends Controller
             'npk' => $request->npk,
             'password' => Hash::make($request->password),
             'posisi' => $request->posisi,
+            'department' => $request->department,
         ]);
 
         event(new Registered($user));

@@ -33,6 +33,24 @@
                     </x-form.input-with-icon-wrapper>
                 </div>
 
+                <!-- Department -->
+                <div class="space-y-2">
+                    <x-form.label for="department" :value="__('Department')" />
+
+                    <x-form.input-with-icon-wrapper>
+                        <x-slot name="icon">
+                            <x-heroicon-o-user aria-hidden="true" class="w-5 h-5" />
+                        </x-slot>
+
+                        <x-form.select withicon id="department" class="block w-full" name="department" :value="old('department')" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Quality">Quality</option>
+                            <option value="PPIC">PPIC</option>
+                        </x-form.select>
+                    </x-form.input-with-icon-wrapper>
+                </div>
+
                 <!-- Position -->
                 <div class="space-y-2">
                     <x-form.label for="posisi" :value="__('Posisi')" />

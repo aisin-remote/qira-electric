@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('id', 191)->primary();
             $table->string('name', 191);
             $table->string('npk', 191)->unique();
+            $table->string('department', 191);
             $table->string('posisi', 191);
             $table->string('password', 191);
             $table->timestamps();
