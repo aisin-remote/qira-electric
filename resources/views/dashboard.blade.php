@@ -59,7 +59,7 @@
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
-                        <button class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100" onclick="openCustomInputModalHenkaten2()">
+                        <button class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100" onclick="openCustomInputModalHenkaten1()">
                             Henkaten Line 1
                         </button>
                     </div>
@@ -194,14 +194,14 @@
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
                 <h5 class="text-lg font-semibold mb-4">Henkaten Line 1</h5>
-                <form>
+                <form id="customInputForm1">
                     <div class="mb-4">
-                        <label for="customInput" class="block text-sm font-medium text-gray-700">Input:</label>
-                        <input type="text" id="customInput" name="customInput" class="mt-1 p-2 w-full border rounded-md">
+                        <label for="customInput1" class="block text-sm font-medium text-gray-700">Input:</label>
+                        <input type="text" id="customInput1" name="customInput1" class="mt-1 p-2 w-full border rounded-md">
                     </div>
                     <div class="flex justify-end">
                         <button type="button" class="px-4 py-2 mr-2 bg-gray-500 text-white rounded-md" onclick="closeCustomInputModalHenkaten1()">Close</button>
-                        <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md" onclick="saveCustomInputHenkaten1()">Save</button>
+                        <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md" id="saveButtonHenkaten1">Save</button>
                     </div>
                 </form>
             </div>
@@ -246,6 +246,7 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function openCustomInputModalHenkaten1() {
             document.getElementById('customInputModal1').classList.remove('hidden');
@@ -255,15 +256,36 @@
             document.getElementById('customInputModal1').classList.add('hidden');
         }
 
+        // Fungsi untuk menyimpan input
         function saveCustomInputHenkaten1() {
-            // Your custom logic to save the input goes here
-            // For example, you can get the input value and log it to the console
-            var customInputValue = document.getElementById('customInput').value;
-            console.log("Custom Input Value: ", customInputValue);
+            var customInputValue = $("#customInput1").val();
+            var line = 'line1';
+            console.log(customInputValue);
+            console.log(line);
+
+            $.ajax({
+                url: "/simpan-henkaten",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}", // Tambahkan token CSRF di sini
+                    customInput: customInputValue,
+                    line: line
+                },
+                success: function(response) {
+                    console.log("Data berhasil disimpan:", response);
+                    closeCustomInputModalHenkaten1();
+                },
+                error: function(error) {
+                    console.error("Gagal menyimpan data:", error);
+                }
+            });
 
             // Close the modal
             closeCustomInputModalHenkaten1();
         }
+
+        // Event handler untuk tombol Save menggunakan jQuery
+        $("#saveButtonHenkaten1").click(saveCustomInputHenkaten1);
 
         function openCustomInputModalHenkaten2() {
             document.getElementById('customInputModal2').classList.remove('hidden');

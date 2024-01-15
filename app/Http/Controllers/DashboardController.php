@@ -9,15 +9,8 @@ use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $startMonth = $request->input('start_month');
-        $endMonth = $request->input('end_month');
-
-        // Set default values if not provided
-        $startMonth = $startMonth ?: Carbon::now()->startOfMonth()->format('Y-m');
-        $endMonth = $endMonth ?: Carbon::now()->endOfMonth()->format('Y-m');
-
         // $customerProblems = CustomerProblem::latest('date_of_problem')->take(1)->get();
         // $customerChartData = $this->getCustomerQuantityChartData();
         // $customerChartDataYear = $this->getCustomerQuantityChartDataYear();

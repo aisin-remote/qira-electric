@@ -6,28 +6,26 @@
         </x-slot>
     </x-sidebar.link>
 
-    @if (auth()->user()->posisi === 'LDR' || auth()->user()->posisi === 'JP' || auth()->user()->posisi === 'Sub JP')
     <x-sidebar.dropdown title="Check Sheet">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.link title="Product" href="{{ route('product.check') }}" :isActive="request()->routeIs('product.check')">
+        <x-sidebar.link title="Product" href="" :isActive="request()->routeIs('product.check')">
         </x-sidebar.link>
 
-        <x-sidebar.link title="Project" href="{{ route('project.check') }}" :isActive="request()->routeIs('project.check')">
+        <x-sidebar.link title="Project" href="" :isActive="request()->routeIs('project.check')">
         </x-sidebar.link>
     </x-sidebar.dropdown>
-    @endif
 
     <x-sidebar.dropdown title="Report">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.link title="Product" href="{{ route('product.report') }}" :isActive="request()->routeIs('product.report')">
+        <x-sidebar.link title="Product" href="" :isActive="request()->routeIs('product.report')">
         </x-sidebar.link>
-        <x-sidebar.link title="Project" href="{{ route('project.report') }}" :isActive="request()->routeIs('project.report')">
+        <x-sidebar.link title="Project" href="" :isActive="request()->routeIs('project.report')">
         </x-sidebar.link>
     </x-sidebar.dropdown>
 
@@ -37,7 +35,7 @@
         </x-slot>
     </x-sidebar.link>
 
-    <x-sidebar.link title="Costumer Information Problem" href="{{ route('problem.form') }}" :isActive="request()->routeIs('problem.form')">
+    <x-sidebar.link title="Costumer Information Problem" href="" :isActive="request()->routeIs('problem.form')">
         <x-slot name="icon">
             <x-css-danger class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
