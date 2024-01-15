@@ -213,14 +213,14 @@
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
                 <h5 class="text-lg font-semibold mb-4">Henkaten Line 2</h5>
-                <form>
+                <form id="customInputForm2">
                     <div class="mb-4">
-                        <label for="customInput" class="block text-sm font-medium text-gray-700">Input:</label>
-                        <input type="text" id="customInput" name="customInput" class="mt-1 p-2 w-full border rounded-md">
+                        <label for="customInput2" class="block text-sm font-medium text-gray-700">Input:</label>
+                        <input type="text" id="customInput2" name="customInput2" class="mt-1 p-2 w-full border rounded-md">
                     </div>
                     <div class="flex justify-end">
                         <button type="button" class="px-4 py-2 mr-2 bg-gray-500 text-white rounded-md" onclick="closeCustomInputModalHenkaten2()">Close</button>
-                        <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md" onclick="saveCustomInputHenkaten2()">Save</button>
+                        <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md" id="saveButtonHenkaten2">Save</button>
                     </div>
                 </form>
             </div>
@@ -232,19 +232,20 @@
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
                 <h5 class="text-lg font-semibold mb-4">Henkaten Line 3</h5>
-                <form>
+                <form id="customInputForm3">
                     <div class="mb-4">
-                        <label for="customInput" class="block text-sm font-medium text-gray-700">Input:</label>
-                        <input type="text" id="customInput" name="customInput" class="mt-1 p-2 w-full border rounded-md">
+                        <label for="customInput3" class="block text-sm font-medium text-gray-700">Input:</label>
+                        <input type="text" id="customInput3" name="customInput3" class="mt-1 p-2 w-full border rounded-md">
                     </div>
                     <div class="flex justify-end">
                         <button type="button" class="px-4 py-2 mr-2 bg-gray-500 text-white rounded-md" onclick="closeCustomInputModalHenkaten3()">Close</button>
-                        <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md" onclick="saveCustomInputHenkaten3()">Save</button>
+                        <button type="button" class="px-4 py-2 bg-blue-500 text-white rounded-md" id="saveButtonHenkaten3">Save</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -295,15 +296,36 @@
             document.getElementById('customInputModal2').classList.add('hidden');
         }
 
+        // Fungsi untuk menyimpan input Line 2
         function saveCustomInputHenkaten2() {
-            // Your custom logic to save the input goes here
-            // For example, you can get the input value and log it to the console
-            var customInputValue = document.getElementById('customInput').value;
-            console.log("Custom Input Value: ", customInputValue);
+            var customInputValue = $("#customInput2").val();
+            var line = 'line2';
+            console.log(customInputValue);
+            console.log(line);
+
+            $.ajax({
+                url: "/simpan-henkaten",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}", // Tambahkan token CSRF di sini
+                    customInput: customInputValue,
+                    line: line
+                },
+                success: function(response) {
+                    console.log("Data berhasil disimpan:", response);
+                    closeCustomInputModalHenkaten2();
+                },
+                error: function(error) {
+                    console.error("Gagal menyimpan data:", error);
+                }
+            });
 
             // Close the modal
             closeCustomInputModalHenkaten2();
         }
+
+        // Event handler untuk tombol Save Line 2 menggunakan jQuery
+        $("#saveButtonHenkaten2").click(saveCustomInputHenkaten2);
 
         function openCustomInputModalHenkaten3() {
             document.getElementById('customInputModal3').classList.remove('hidden');
@@ -313,15 +335,36 @@
             document.getElementById('customInputModal3').classList.add('hidden');
         }
 
+        // Fungsi untuk menyimpan input Line 3
         function saveCustomInputHenkaten3() {
-            // Your custom logic to save the input goes here
-            // For example, you can get the input value and log it to the console
-            var customInputValue = document.getElementById('customInput').value;
-            console.log("Custom Input Value: ", customInputValue);
+            var customInputValue = $("#customInput3").val();
+            var line = 'line3';
+            console.log(customInputValue);
+            console.log(line);
+
+            $.ajax({
+                url: "/simpan-henkaten",
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}", // Tambahkan token CSRF di sini
+                    customInput: customInputValue,
+                    line: line
+                },
+                success: function(response) {
+                    console.log("Data berhasil disimpan:", response);
+                    closeCustomInputModalHenkaten3();
+                },
+                error: function(error) {
+                    console.error("Gagal menyimpan data:", error);
+                }
+            });
 
             // Close the modal
             closeCustomInputModalHenkaten3();
         }
+
+        // Event handler untuk tombol Save Line 3 menggunakan jQuery
+        $("#saveButtonHenkaten3").click(saveCustomInputHenkaten3);
     </script>
 
 </x-app-layout>
