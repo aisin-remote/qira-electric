@@ -57,11 +57,15 @@
                         <br>
                         <hr>
                     </div>
-                    <div>
+                    <div class="flex flex-col items-center space-y-4">
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
-                        <button class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100" onclick="openCustomInputModalHenkaten1()">
-                            Henkaten Line 1
-                        </button>
+                        <?php
+                        $buttonText = ($line1 && $line1->value) ? $line1->value : 'Henkaten Line 1';
+                        ?>
+
+                        <div class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100 leading-tight max-w-xs" id="henkatenbutton1" onclick="openCustomInputModalHenkaten1()">
+                            <?php echo $buttonText; ?>
+                        </div>
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Quality Concern</h3>
@@ -116,11 +120,15 @@
                         <br>
                         <hr>
                     </div>
-                    <div>
+                    <div class="flex flex-col items-center space-y-4">
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
-                        <button class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100" onclick="openCustomInputModalHenkaten2()">
-                            Henkaten Line 2
-                        </button>
+                        <?php
+                        $buttonText = ($line2 && $line2->value) ? $line2->value : 'Henkaten Line 2';
+                        ?>
+
+                        <div class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100 leading-tight max-w-xs" id="henkatenbutton2" onclick="openCustomInputModalHenkaten2()">
+                            <?php echo $buttonText; ?>
+                        </div>
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Quality Concern</h3>
@@ -175,11 +183,15 @@
                         <br>
                         <hr>
                     </div>
-                    <div>
+                    <div class="flex flex-col items-center space-y-4">
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
-                        <button class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100" onclick="openCustomInputModalHenkaten3()">
-                            Henkaten Line 3
-                        </button>
+                        <?php
+                        $buttonText = ($line3 && $line3->value) ? $line3->value : 'Henkaten Line 3';
+                        ?>
+
+                        <div class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100 leading-tight max-w-xs" id="henkatenbutton3" onclick="openCustomInputModalHenkaten3()">
+                            <?php echo $buttonText; ?>
+                        </div>
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Quality Concern</h3>
@@ -274,6 +286,14 @@
                 },
                 success: function(response) {
                     console.log("Data berhasil disimpan:", response);
+
+                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten Line 1';
+                    $("#henkatenbutton1").text(buttonText);
+
+                    console.log(buttonText);
+
+                    alert("Henkaten line 1 sudah tersimpan");
+
                     closeCustomInputModalHenkaten1();
                 },
                 error: function(error) {
@@ -313,6 +333,14 @@
                 },
                 success: function(response) {
                     console.log("Data berhasil disimpan:", response);
+
+                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten Line 2';
+                    $("#henkatenbutton2").text(buttonText);
+
+                    console.log(buttonText);
+
+                    alert("Henkaten line 2 sudah tersimpan");
+
                     closeCustomInputModalHenkaten2();
                 },
                 error: function(error) {
@@ -352,6 +380,14 @@
                 },
                 success: function(response) {
                     console.log("Data berhasil disimpan:", response);
+
+                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten Line 3';
+                    $("#henkatenbutton3").text(buttonText);
+
+                    console.log(buttonText);
+
+                    alert("Henkaten line 3 sudah tersimpan");
+
                     closeCustomInputModalHenkaten3();
                 },
                 error: function(error) {
