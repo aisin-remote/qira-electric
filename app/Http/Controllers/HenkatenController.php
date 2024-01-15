@@ -14,11 +14,11 @@ class HenkatenController extends Controller
             $customInput = $request->input('customInput');
             $line = $request->input('line');
 
-            // Simpan data ke database
-            Henkaten::create([
-                'value' => $customInput,
-                'line' => $line,
-            ]);
+            // Simpan data ke database atau update jika sudah ada
+            Henkaten::updateOrCreate(
+                ['line' => $line],
+                ['value' => $customInput]
+            );
 
             return response()->json(['success' => true, 'message' => 'Data berhasil disimpan']);
         } catch (\Exception $e) {
