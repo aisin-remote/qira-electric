@@ -10,7 +10,7 @@
     <div class="relative">
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-3 text-center">
             <div class="bg-white rounded-md shadow-md p-4">
-                <h2 class="text-xl font-semibold mb-4">Line 1</h2>
+                <h2 class="text-xl font-semibold mb-4">ASMP01</h2>
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                     <div class="sm:col-span-2 md:col-span-2 lg:col-span-2">
                         <h3 class="text-l font-semibold mb-4">Costumer Problem</h3>
@@ -60,7 +60,7 @@
                     <div class="flex flex-col items-center space-y-4">
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
                         <?php
-                        $buttonText = ($line1 && $line1->value) ? $line1->value : 'Henkaten Line 1';
+                        $buttonText = ($line1 && $line1->value) ? $line1->value : 'Henkaten ASMP01';
                         ?>
 
                         <div class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100 leading-tight max-w-xs" id="henkatenbutton1" onclick="openCustomInputModalHenkaten1()">
@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-md shadow-md p-4">
-                <h2 class="text-xl font-semibold mb-4">Line 2</h2>
+                <h2 class="text-xl font-semibold mb-4">ASIP01</h2>
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                     <div class="sm:col-span-2 md:col-span-2 lg:col-span-2">
                         <h3 class="text-l font-semibold mb-4">Costumer Problem</h3>
@@ -123,7 +123,7 @@
                     <div class="flex flex-col items-center space-y-4">
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
                         <?php
-                        $buttonText = ($line2 && $line2->value) ? $line2->value : 'Henkaten Line 2';
+                        $buttonText = ($line2 && $line2->value) ? $line2->value : 'Henkaten ASIP01';
                         ?>
 
                         <div class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100 leading-tight max-w-xs" id="henkatenbutton2" onclick="openCustomInputModalHenkaten2()">
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div class="bg-white rounded-md shadow-md p-4">
-                <h2 class="text-xl font-semibold mb-4">Line 3</h2>
+                <h2 class="text-xl font-semibold mb-4">ASAN01</h2>
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
                     <div class="sm:col-span-2 md:col-span-2 lg:col-span-2">
                         <h3 class="text-l font-semibold mb-4">Costumer Problem</h3>
@@ -186,7 +186,7 @@
                     <div class="flex flex-col items-center space-y-4">
                         <h3 class="text-l font-semibold mb-4">Henkaten</h3>
                         <?php
-                        $buttonText = ($line3 && $line3->value) ? $line3->value : 'Henkaten Line 3';
+                        $buttonText = ($line3 && $line3->value) ? $line3->value : 'Henkaten ASAN01';
                         ?>
 
                         <div class="bg-white border text-black px-4 py-2 rounded-md text-xs w-full hover:bg-gray-100 leading-tight max-w-xs" id="henkatenbutton3" onclick="openCustomInputModalHenkaten3()">
@@ -201,11 +201,11 @@
         </div>
     </div>
 
-    <!-- Modal Henkaten Line 1 -->
+    <!-- Modal Henkaten ASMP01 -->
     <div id="customInputModal1" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 hidden">
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
-                <h5 class="text-lg font-semibold mb-4">Henkaten Line 1</h5>
+                <h5 class="text-lg font-semibold mb-4">Henkaten ASMP01</h5>
                 <form id="customInputForm1">
                     <div class="mb-4">
                         <label for="customInput1" class="block text-sm font-medium text-gray-700">Input:</label>
@@ -220,11 +220,11 @@
         </div>
     </div>
 
-    <!-- Modal Henkaten Line 2 -->
+    <!-- Modal Henkaten ASIP01 -->
     <div id="customInputModal2" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 hidden">
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
-                <h5 class="text-lg font-semibold mb-4">Henkaten Line 2</h5>
+                <h5 class="text-lg font-semibold mb-4">Henkaten ASIP01</h5>
                 <form id="customInputForm2">
                     <div class="mb-4">
                         <label for="customInput2" class="block text-sm font-medium text-gray-700">Input:</label>
@@ -239,11 +239,11 @@
         </div>
     </div>
 
-    <!-- Modal Henkaten Line 3 -->
+    <!-- Modal Henkaten ASAN01 -->
     <div id="customInputModal3" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 hidden">
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
-                <h5 class="text-lg font-semibold mb-4">Henkaten Line 3</h5>
+                <h5 class="text-lg font-semibold mb-4">Henkaten ASAN01</h5>
                 <form id="customInputForm3">
                     <div class="mb-4">
                         <label for="customInput3" class="block text-sm font-medium text-gray-700">Input:</label>
@@ -260,6 +260,10 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+    <!-- JS For Modal -->
     <script>
         function openCustomInputModalHenkaten1() {
             document.getElementById('customInputModal1').classList.remove('hidden');
@@ -287,12 +291,17 @@
                 success: function(response) {
                     console.log("Data berhasil disimpan:", response);
 
-                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten Line 1';
+                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten ASMP01';
                     $("#henkatenbutton1").text(buttonText);
 
                     console.log(buttonText);
 
-                    alert("Henkaten line 1 sudah tersimpan");
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Henkaten ASMP01 sudah tersimpan',
+                        showConfirmButton: false,
+                        timer: 1500 // Durasi tampilan notifikasi dalam milidetik (misalnya: 1500ms = 1.5 detik)
+                    });
 
                     closeCustomInputModalHenkaten1();
                 },
@@ -316,7 +325,7 @@
             document.getElementById('customInputModal2').classList.add('hidden');
         }
 
-        // Fungsi untuk menyimpan input Line 2
+        // Fungsi untuk menyimpan input ASIP01
         function saveCustomInputHenkaten2() {
             var customInputValue = $("#customInput2").val();
             var line = 'line2';
@@ -334,12 +343,17 @@
                 success: function(response) {
                     console.log("Data berhasil disimpan:", response);
 
-                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten Line 2';
+                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten ASIP01';
                     $("#henkatenbutton2").text(buttonText);
 
                     console.log(buttonText);
 
-                    alert("Henkaten line 2 sudah tersimpan");
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Henkaten ASIP01 sudah tersimpan',
+                        showConfirmButton: false,
+                        timer: 1500 // Durasi tampilan notifikasi dalam milidetik (misalnya: 1500ms = 1.5 detik)
+                    });
 
                     closeCustomInputModalHenkaten2();
                 },
@@ -352,7 +366,7 @@
             closeCustomInputModalHenkaten2();
         }
 
-        // Event handler untuk tombol Save Line 2 menggunakan jQuery
+        // Event handler untuk tombol Save ASIP01 menggunakan jQuery
         $("#saveButtonHenkaten2").click(saveCustomInputHenkaten2);
 
         function openCustomInputModalHenkaten3() {
@@ -363,7 +377,7 @@
             document.getElementById('customInputModal3').classList.add('hidden');
         }
 
-        // Fungsi untuk menyimpan input Line 3
+        // Fungsi untuk menyimpan input ASAN01
         function saveCustomInputHenkaten3() {
             var customInputValue = $("#customInput3").val();
             var line = 'line3';
@@ -381,12 +395,17 @@
                 success: function(response) {
                     console.log("Data berhasil disimpan:", response);
 
-                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten Line 3';
+                    var buttonText = customInputValue != '' ? customInputValue : 'Henkaten ASAN01';
                     $("#henkatenbutton3").text(buttonText);
 
                     console.log(buttonText);
 
-                    alert("Henkaten line 3 sudah tersimpan");
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Henkaten ASAN01 sudah tersimpan',
+                        showConfirmButton: false,
+                        timer: 1500 // Durasi tampilan notifikasi dalam milidetik (misalnya: 1500ms = 1.5 detik)
+                    });
 
                     closeCustomInputModalHenkaten3();
                 },
@@ -399,7 +418,7 @@
             closeCustomInputModalHenkaten3();
         }
 
-        // Event handler untuk tombol Save Line 3 menggunakan jQuery
+        // Event handler untuk tombol Save ASAN01 menggunakan jQuery
         $("#saveButtonHenkaten3").click(saveCustomInputHenkaten3);
     </script>
 
