@@ -206,6 +206,15 @@
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
                 <h5 class="text-lg font-semibold mb-4">Henkaten ASMP01</h5>
+                <div class="mb-4">
+                    <label for="customInput1" class="block text-sm font-medium text-gray-700">Current Henkaten:</label>
+                    <?php
+                    $Text = ($line1 && $line1->value) ? $line1->value : 'Input Henkaten!!';
+                    ?>
+                    <input type="text" id="currentInput1" name="customInput1" class="mt-1 p-2 w-full border rounded-md disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" disabled value="<?php echo $Text; ?>">
+                    <p class="text-xs text-gray-500 text-right">Last Update: <?php $Text = ($line1 && $line1->updated_at) ? $line1->updated_at : '-';
+                                                                    echo $Text; ?></p>
+                </div>
                 <form id="customInputForm1">
                     <div class="mb-4">
                         <label for="customInput1" class="block text-sm font-medium text-gray-700">Input:</label>
@@ -225,6 +234,15 @@
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
                 <h5 class="text-lg font-semibold mb-4">Henkaten ASIP01</h5>
+                <div class="mb-4">
+                    <label for="customInput2" class="block text-sm font-medium text-gray-700">Current Henkaten:</label>
+                    <?php
+                    $Text = ($line2 && $line2->value) ? $line2->value : 'Input Henkaten!!';
+                    ?>
+                    <input type="text" id="currentInput2" name="customInput2" class="mt-1 p-2 w-full border rounded-md disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" disabled value="<?php echo $Text; ?>">
+                    <p class="text-xs text-gray-500 text-right">Last Update: <?php $Text = ($line2 && $line2->updated_at) ? $line2->updated_at : '-';
+                                                                    echo $Text; ?></p>
+                </div>
                 <form id="customInputForm2">
                     <div class="mb-4">
                         <label for="customInput2" class="block text-sm font-medium text-gray-700">Input:</label>
@@ -244,6 +262,15 @@
         <div class="flex justify-center items-center h-full">
             <div class="bg-white p-8 rounded-md shadow-md w-96">
                 <h5 class="text-lg font-semibold mb-4">Henkaten ASAN01</h5>
+                <div class="mb-4">
+                    <label for="customInput3" class="block text-sm font-medium text-gray-700">Current Henkaten:</label>
+                    <?php
+                    $Text = ($line3 && $line3->value) ? $line3->value : 'Input Henkaten!!';
+                    ?>
+                    <input type="text" id="currentInput3" name="customInput3" class="mt-1 p-2 w-full border rounded-md disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" disabled value="<?php echo $Text; ?>">
+                    <p class="text-xs text-gray-500 text-right">Last Update: <?php $Text = ($line3 && $line3->updated_at) ? $line3->updated_at : '-';
+                                                                    echo $Text; ?></p>
+                </div>
                 <form id="customInputForm3">
                     <div class="mb-4">
                         <label for="customInput3" class="block text-sm font-medium text-gray-700">Input:</label>
@@ -293,6 +320,7 @@
 
                     var buttonText = customInputValue != '' ? customInputValue : 'Henkaten ASMP01';
                     $("#henkatenbutton1").text(buttonText);
+                    $("#currentInput1").val(buttonText);
 
                     console.log(buttonText);
 
@@ -345,6 +373,7 @@
 
                     var buttonText = customInputValue != '' ? customInputValue : 'Henkaten ASIP01';
                     $("#henkatenbutton2").text(buttonText);
+                    $("#currentInput2").val(buttonText);
 
                     console.log(buttonText);
 
@@ -397,6 +426,7 @@
 
                     var buttonText = customInputValue != '' ? customInputValue : 'Henkaten ASAN01';
                     $("#henkatenbutton3").text(buttonText);
+                    $("#currentInput3").val(buttonText);
 
                     console.log(buttonText);
 
