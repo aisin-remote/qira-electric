@@ -150,7 +150,7 @@ class PicaController extends Controller
                 $document->save();
             }
         }
-        
+
         return redirect()->route('pica.index')->with('success', 'Data Pica berhasil diubah.');
     }
 

@@ -34,6 +34,11 @@
             <x-css-board class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
     </x-sidebar.link>
+    <x-sidebar.link title="History Problem Quality" href="{{ route('problem.form') }}" :isActive="request()->routeIs('problem.form')">
+        <x-slot name="icon">
+            <x-css-board class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
 
     <x-sidebar.link title="Costumer Information Problem" href="" :isActive="request()->routeIs('problem.form')">
         <x-slot name="icon">

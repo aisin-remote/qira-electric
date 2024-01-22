@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PicaController;
 use App\Http\Controllers\HenkatenController;
+use App\Http\Controllers\ProblemController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -33,6 +34,14 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/pica/{id}', [PicaController::class, 'update'])->name('pica.updateData');
     Route::get('/pica/delete/{id}', [PicaController::class, 'delete'])->name('pica.delete');
     Route::resource('pica', PicaController::class);
+
+    //problem
+    Route::get('/problem-form', [ProblemController::class, 'index'])->name('problem.form');
+    Route::get('/problem/{id}/edit', [ProblemController::class, 'edit'])->name('problem.editData');
+    Route::put('/problem/{id}', [ProblemController::class, 'update'])->name('problem.updateData');
+    Route::get('/problem/delete/{id}', [ProblemController::class, 'delete'])->name('problem.delete');
+    Route::resource('problem', ProblemController::class);
+
 });
 
 
