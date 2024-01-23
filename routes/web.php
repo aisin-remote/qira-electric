@@ -28,11 +28,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/simpan-henkaten', [HenkatenController::class, 'index'])->name('simpan.henkaten');
 
     // PICA
-    Route::get('/pica-form', [PicaController::class, 'index'])->name('pica.form');
-    Route::get('/pica/{id}/edit', [PicaController::class, 'edit'])->name('pica.editData');
-    Route::put('/pica/{id}', [PicaController::class, 'update'])->name('pica.updateData');
-    Route::get('/pica/delete/{id}', [PicaController::class, 'delete'])->name('pica.delete');
-    Route::resource('pica', PicaController::class);
+    // Route::get('/pica-form', [PicaController::class, 'index'])->name('pica.form');
+    // Route::get('/pica/{id}/edit', [PicaController::class, 'edit'])->name('pica.editData');
+    // Route::put('/pica/{id}', [PicaController::class, 'update'])->name('pica.updateData');
+    // Route::get('/pica/delete/{id}', [PicaController::class, 'delete'])->name('pica.delete');
+    // Route::resource('pica', PicaController::class);
 });
 
 
