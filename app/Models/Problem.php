@@ -16,6 +16,6 @@ class Problem extends Model
 
     public function documentProblem()
     {
-        return $this->hasMany(DocumentProblem::class, 'id_problem');
+        // return $this->hasMany(DocumentProblem::class, 'id_problem');
     }
 }
