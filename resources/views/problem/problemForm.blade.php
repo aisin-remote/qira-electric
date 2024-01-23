@@ -432,7 +432,7 @@
         });
 
        pmodal.addEventListener("click", function(event) {
-            if (event.target === modal) {
+            if (event.target === pmodal) {
                 pmodal.classList.add("hidden");
             }
         });

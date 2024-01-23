@@ -14,8 +14,5 @@ class Problem extends Model
 
     protected $table = 'tm_problem';
 
-    public function documentProblem()
-    {
-        return $this->hasMany(DocumentProblem::class, 'id_problem');
-    }
+   
 }
