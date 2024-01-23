@@ -1,3 +1,4 @@
+{{-- test --}}
 <x-perfect-scrollbar as="nav" aria-label="main" class="flex flex-col flex-1 gap-4 px-3">
 
     <x-sidebar.link title="Dashboard" href="{{ route('dashboard') }}" :isActive="request()->routeIs('dashboard')">
@@ -30,6 +31,11 @@
     </x-sidebar.dropdown>
 
     <x-sidebar.link title="History PICA Quality" href="{{ route('pica.form') }}" :isActive="request()->routeIs('pica.form')">
+        <x-slot name="icon">
+            <x-css-board class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+    <x-sidebar.link title="History Problem Quality" href="{{ route('problem.form') }}" :isActive="request()->routeIs('problem.form')">
         <x-slot name="icon">
             <x-css-board class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
