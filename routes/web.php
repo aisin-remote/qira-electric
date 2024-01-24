@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CostumerProblemController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
@@ -42,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/problem/delete/{id}', [ProblemController::class, 'delete'])->name('problem.delete');
     Route::resource('problem', ProblemController::class);
 
+    // Costumer Problem
+    Route::get('/costumer-problem', [CostumerProblemController::class, 'index'])->name('costumer');
 });
 
 
