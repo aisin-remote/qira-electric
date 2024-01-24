@@ -29,7 +29,7 @@
         <h2>Costumer/Supplier Problem</h2>
         <br>
 
-        <input type="date" id="filterDateCost" class="w-1/4 md:w-1/6 lg:w-1/6 border-2 border-gray-300 px-3 py-2 rounded-md" onchange="filterByDateCost()" placeholder="Filter Tanggal">
+        <!-- <input type="date" id="filterDateCost" class="w-1/4 md:w-1/6 lg:w-1/6 border-2 border-gray-300 px-3 py-2 rounded-md" onchange="filterByDateCost()" placeholder="Filter Tanggal"> -->
 
         <!-- <input type="text" id="myInputCost" onkeyup="myFunctionCost()" class="w-1/2 md:w-1/4 lg:w-1/4 border-2 border-gray-300 mb-3 px-3 py-2 rounded-md" placeholder="Search"> -->
 
@@ -37,20 +37,33 @@
             <table id="myTableCost" class="w-full text-xs md:text-xs text-left text-gray-500 border border-gray-300 table-auto">
                 <thead class="bg-gray-200">
                     <tr>
+                        <th class="px-4 py-2">Date of Problem</th>
                         <th class="px-4 py-2">Line</th>
                         <th class="px-4 py-2">Problem</th>
-                        <th class="px-4 py-2">Date of Problem</th>
                         <th class="px-4 py-2">Customer</th>
                         <th class="px-4 py-2">Model Product</th>
                         <th class="px-4 py-2">Quantity Product</th>
                         <th class="px-4 py-2">Process Problem</th>
-                        <th class="px-4 py-2">Date of Problem</th>
+                        <th class="px-4 py-2">Date of Process</th>
                         <th class="px-4 py-2">Status Problem</th>
                         <th class="px-4 py-2">Status Kaizen</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Your table data goes here -->
+                @foreach($customerProblemData as $data)
+            <tr>
+                <td>{{ $data->date_problem }}</td>
+                <td>{{ $data->line }}</td>
+                <td>{{ $data->problem }}</td>
+                <td>{{ $data->customer }}</td>
+                <td>{{ $data->model }}</td>
+                <td>{{ $data->qty }}</td>
+                <td>{{ $data->process }}</td>
+                <td>{{ $data->date_process }}</td>
+                <td>{{ $data->status_problem }}</td>
+                <td>{{ $data->status_kaizen }}</td>
+            </tr>
+        @endforeach
                 </tbody>
             </table>
         </div>
@@ -164,7 +177,8 @@
         <script>
             $(document).ready(function() {
                 $('#myTableCost').DataTable({
-                    "dom": '<"flex justify-between items-center mb-4"<"flex-1"f>>rt<"flex justify-between items-center mt-4"<"ml-4"i><"flex-1"p>>', // Adjust the layout
+                    "dom": '<"flex justify-between items-center mb-4"f<"flex-1">>rt<"flex justify-between items-center mt-4"<"ml-4"i><"flex-1"p>>', // Adjust the layout
+                    "order": [[0, "desc"]],
                 });
             });
         </script>
@@ -332,7 +346,7 @@
 
                 for (var i = 1; i < table.rows.length; i++) {
                     var row = table.rows[i];
-                    var cellDate = row.cells[2].textContent; // Ganti indeks dengan kolom yang sesuai
+                    var cellDate = row.cells[0].textContent; // Ganti indeks dengan kolom yang sesuai
 
                     // Jika tanggal di dalam sel sesuai dengan input tanggal, tampilkan baris; jika tidak, sembunyikan.
                     if (cellDate === inputDate) {

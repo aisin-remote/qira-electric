@@ -9,18 +9,11 @@ class CostumerProblemController extends Controller
 {
     public function index()
     {
-        // $customerProblemData = Pica::where('tipe', 'CUSTOMER/SUPPLIER PROBLEM')
-        //     ->orderBy('tanggal', 'desc')
-        //     ->orderBy('jam', 'desc')
-        //     ->get();
+        $customerProblemData = CostumerProblem::orderBy('date_problem', 'desc')
+            ->get();
 
-        // $internalProblemData = Pica::where('tipe', 'INTERNAL PROBLEM')
-        //     ->orderBy('tanggal', 'desc')
-        //     ->orderBy('jam', 'desc')
-        //     ->get();
-
-        // return view("pica.picaForm", compact('customerProblemData', 'internalProblemData'));
-        return view("pica.picaForm");
+        return view("pica.picaForm", compact('customerProblemData'));
+        // return view("pica.picaForm");
     }
 
     public function store(Request $request)
