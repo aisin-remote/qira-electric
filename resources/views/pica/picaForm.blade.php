@@ -61,7 +61,7 @@
                     <div class="lg:w-2/3 p-6 overflow-hidden bg-white rounded-tl-md rounded-bl-md dark:bg-dark-eval-1">
                         <button id="closeModalButton" class="absolute top-3 right-3 text-gray-600 hover:text-gray-800">
                         </button>
-                        <form action="" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('costumer-store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="space-y-4">
                                 <!-- Kolom Pertama -->
@@ -103,7 +103,7 @@
                                         Model Product
                                     </div>
                                     <div>
-                                        <input type="text" name="model_product" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                        <input type="text" name="model" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
                                     </div>
                                 </div>
                             </div>
@@ -117,14 +117,14 @@
                                     Quantity Product
                                 </div>
                                 <div>
-                                    <input type="text" required name="quantity_product" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                    <input type="text" required name="qty" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
                                 </div>
 
                                 <div class="font-bold">
                                     Process Problem
                                 </div>
                                 <div>
-                                    <input type="text" required name="process_problem" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                    <input type="text" required name="process" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
                                 </div>
 
                                 <div class="font-bold">

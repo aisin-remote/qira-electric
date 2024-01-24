@@ -7,6 +7,12 @@
         </x-slot>
     </x-sidebar.link>
 
+    <x-sidebar.link title="Costumer Problem" href="{{ route('costumer') }}" :isActive="request()->routeIs('costumer')">
+        <x-slot name="icon">
+            <x-css-danger class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
     <!-- <x-sidebar.dropdown title="Check Sheet">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
