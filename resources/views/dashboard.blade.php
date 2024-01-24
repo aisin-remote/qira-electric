@@ -18,39 +18,39 @@
                             <tbody>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 1</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Date of Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 2</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->date_problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Costumer</td>
-                                    <td class="border py-1 px-2 text-xs">Description 3</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->customer : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Model Product</td>
-                                    <td class="border py-1 px-2 text-xs">Description 4</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->model : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Quantity Product</td>
-                                    <td class="border py-1 px-2 text-xs">Description 5</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->qty : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Process Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 6</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->process : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Date of Process</td>
-                                    <td class="border py-1 px-2 text-xs">Description 7</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->date_process : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Status Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 8</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->status_problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Status Kaizen</td>
-                                    <td class="border py-1 px-2 text-xs">Description 9</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASMP01) ? $ASMP01->status_kaizen : 'Data Tidak Ada'; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -81,39 +81,39 @@
                             <tbody>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 1</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Date of Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 2</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->date_problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Costumer</td>
-                                    <td class="border py-1 px-2 text-xs">Description 3</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->customer : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Model Product</td>
-                                    <td class="border py-1 px-2 text-xs">Description 4</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->model : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Quantity Product</td>
-                                    <td class="border py-1 px-2 text-xs">Description 5</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->qty : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Process Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 6</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->process : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Date of Process</td>
-                                    <td class="border py-1 px-2 text-xs">Description 7</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->date_process : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Status Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 8</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->status_problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Status Kaizen</td>
-                                    <td class="border py-1 px-2 text-xs">Description 9</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASIP01) ? $ASIP01->status_kaizen : 'Data Tidak Ada'; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -144,39 +144,39 @@
                             <tbody>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 1</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Date of Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 2</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->date_problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Costumer</td>
-                                    <td class="border py-1 px-2 text-xs">Description 3</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->customer : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Model Product</td>
-                                    <td class="border py-1 px-2 text-xs">Description 4</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->model : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Quantity Product</td>
-                                    <td class="border py-1 px-2 text-xs">Description 5</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->qty : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Process Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 6</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->process : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Date of Process</td>
-                                    <td class="border py-1 px-2 text-xs">Description 7</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->date_process : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Status Problem</td>
-                                    <td class="border py-1 px-2 text-xs">Description 8</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->status_problem : 'Data Tidak Ada'; ?></td>
                                 </tr>
                                 <tr>
                                     <td class="border py-1 px-2 text-xs font-bold">Status Kaizen</td>
-                                    <td class="border py-1 px-2 text-xs">Description 9</td>
+                                    <td class="border py-1 px-2 text-xs"><?php echo isset($ASAN01) ? $ASAN01->status_kaizen : 'Data Tidak Ada'; ?></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -213,7 +213,7 @@
                     ?>
                     <input type="text" id="currentInput1" name="customInput1" class="mt-1 p-2 w-full border rounded-md disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" disabled value="<?php echo $Text; ?>">
                     <p class="text-xs text-gray-500 text-right">Last Update: <?php $Text = ($line1 && $line1->updated_at) ? $line1->updated_at : '-';
-                                                                    echo $Text; ?></p>
+                                                                                echo $Text; ?></p>
                 </div>
                 <form id="customInputForm1">
                     <div class="mb-4">
@@ -241,7 +241,7 @@
                     ?>
                     <input type="text" id="currentInput2" name="customInput2" class="mt-1 p-2 w-full border rounded-md disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" disabled value="<?php echo $Text; ?>">
                     <p class="text-xs text-gray-500 text-right">Last Update: <?php $Text = ($line2 && $line2->updated_at) ? $line2->updated_at : '-';
-                                                                    echo $Text; ?></p>
+                                                                                echo $Text; ?></p>
                 </div>
                 <form id="customInputForm2">
                     <div class="mb-4">
@@ -269,7 +269,7 @@
                     ?>
                     <input type="text" id="currentInput3" name="customInput3" class="mt-1 p-2 w-full border rounded-md disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" disabled value="<?php echo $Text; ?>">
                     <p class="text-xs text-gray-500 text-right">Last Update: <?php $Text = ($line3 && $line3->updated_at) ? $line3->updated_at : '-';
-                                                                    echo $Text; ?></p>
+                                                                                echo $Text; ?></p>
                 </div>
                 <form id="customInputForm3">
                     <div class="mb-4">
