@@ -65,7 +65,7 @@
                         <td>{{ $data->status_kaizen }}</td>
                         <td class="px-4 py-2 text-center">
                             <!-- <a href="#" class="text-blue-500 hover:text-blue-700 font-bold">Edit</a> -->
-                            <a href="{{ route('costumer-delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
+                            <a href="{{ route('costumer.delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
                         </td>
                     </tr>
                     @endforeach
@@ -79,7 +79,7 @@
                     <div class="lg:w-2/3 p-6 overflow-hidden bg-white rounded-tl-md rounded-bl-md dark:bg-dark-eval-1">
                         <button id="closeModalButton" class="absolute top-3 right-3 text-gray-600 hover:text-gray-800">
                         </button>
-                        <form action="{{ route('costumer-store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('costumer.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="space-y-4">
                                 <!-- Kolom Pertama -->
