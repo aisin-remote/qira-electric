@@ -39,4 +39,19 @@ class CostumerProblemController extends Controller
         // Redirect back to the form with a success message
         return redirect()->route('costumer')->with('success', 'Data has been saved successfully!');
     }
+
+    public function delete($id)
+    {
+        $costumerProblem = CostumerProblem::find($id);
+
+        if (!$costumerProblem) {
+            // Handle the case where the record is not found
+            return redirect()->route('costumer')->with('error', 'Record not found.');
+        }
+
+        $costumerProblem->delete();
+
+        // Redirect to a specific page or route after deletion
+        return redirect()->route('costumer')->with('success', 'Record deleted successfully.');
+    }
 }

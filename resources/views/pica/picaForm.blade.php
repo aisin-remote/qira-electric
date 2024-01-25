@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Customer Problem') }}
+            {{ __('QIRA-ELECTRIC') }}
         </h2>
     </x-slot>
 
@@ -26,7 +26,7 @@
             <x-css-add class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             <span class="sm:hidden inline">Tambahkan Data</span>
         </button>
-        <h2>Costumer/Supplier Problem</h2>
+        <h2 class="font-semibold">Costumer Problem</h2>
         <br>
 
         <!-- <input type="date" id="filterDateCost" class="w-1/4 md:w-1/6 lg:w-1/6 border-2 border-gray-300 px-3 py-2 rounded-md" onchange="filterByDateCost()" placeholder="Filter Tanggal"> -->
@@ -47,23 +47,28 @@
                         <th class="px-4 py-2">Date of Process</th>
                         <th class="px-4 py-2">Status Problem</th>
                         <th class="px-4 py-2">Status Kaizen</th>
+                        <th class="px-4 py-2">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($customerProblemData as $data)
-            <tr>
-                <td>{{ $data->date_problem }}</td>
-                <td>{{ $data->line }}</td>
-                <td>{{ $data->problem }}</td>
-                <td>{{ $data->customer }}</td>
-                <td>{{ $data->model }}</td>
-                <td>{{ $data->qty }}</td>
-                <td>{{ $data->process }}</td>
-                <td>{{ $data->date_process }}</td>
-                <td>{{ $data->status_problem }}</td>
-                <td>{{ $data->status_kaizen }}</td>
-            </tr>
-        @endforeach
+                    @foreach($customerProblemData as $data)
+                    <tr>
+                        <td>{{ $data->date_problem }}</td>
+                        <td>{{ $data->line }}</td>
+                        <td>{{ $data->problem }}</td>
+                        <td>{{ $data->customer }}</td>
+                        <td>{{ $data->model }}</td>
+                        <td>{{ $data->qty }}</td>
+                        <td>{{ $data->process }}</td>
+                        <td>{{ $data->date_process }}</td>
+                        <td>{{ $data->status_problem }}</td>
+                        <td>{{ $data->status_kaizen }}</td>
+                        <td class="px-4 py-2 text-center">
+                            <!-- <a href="#" class="text-blue-500 hover:text-blue-700 font-bold">Edit</a> -->
+                            <a href="{{ route('costumer-delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -178,7 +183,9 @@
             $(document).ready(function() {
                 $('#myTableCost').DataTable({
                     "dom": '<"flex justify-between items-center mb-4"f<"flex-1">>rt<"flex justify-between items-center mt-4"<"ml-4"i><"flex-1"p>>', // Adjust the layout
-                    "order": [[0, "desc"]],
+                    "order": [
+                        [0, "desc"]
+                    ],
                 });
             });
         </script>

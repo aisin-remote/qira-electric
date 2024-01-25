@@ -46,6 +46,7 @@ Route::middleware(['auth'])->group(function () {
     // Costumer Problem
     Route::get('/costumer-problem', [CostumerProblemController::class, 'index'])->name('costumer');
     Route::post('/costumer-problem-store', [CostumerProblemController::class, 'store'])->name('costumer-store');
+    Route::get('/costumer-problem-delete/{id}', [CostumerProblemController::class, 'delete'])->name('costumer-delete');
 });
 
 
