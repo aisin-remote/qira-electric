@@ -54,4 +54,12 @@ class CostumerProblemController extends Controller
         // Redirect to a specific page or route after deletion
         return redirect()->route('costumer')->with('success', 'Record deleted successfully.');
     }
+    public function edit($id)
+    {
+        $costumerProblem = CostumerProblem::find($id);
+
+        // dd($costumerProblem);
+
+        return view("pica.editPica", compact('costumerProblem'));
+    }
 }

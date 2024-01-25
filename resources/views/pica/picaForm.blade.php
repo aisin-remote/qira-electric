@@ -64,7 +64,7 @@
                         <td>{{ $data->status_problem }}</td>
                         <td>{{ $data->status_kaizen }}</td>
                         <td class="px-4 py-2 text-center">
-                            <!-- <a href="#" class="text-blue-500 hover:text-blue-700 font-bold">Edit</a> -->
+                            <a href="{{ route('costumer.edit', ['id' => $data->id]) }}" class="text-blue-500 hover:text-blue-700 font-bold">Edit</a>
                             <a href="{{ route('costumer.delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
                         </td>
                     </tr>
@@ -135,7 +135,7 @@
                                     Quantity Product
                                 </div>
                                 <div>
-                                    <input type="text" required name="qty" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                    <input type="number" required name="qty" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
                                 </div>
 
                                 <div class="font-bold">
