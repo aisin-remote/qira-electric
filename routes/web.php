@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/costumer-problem/store', [CostumerProblemController::class, 'store'])->name('costumer.store');
     Route::get('/costumer-problem/delete/{id}', [CostumerProblemController::class, 'delete'])->name('costumer.delete');
     Route::get('/costumer-problem/edit/{id}', [CostumerProblemController::class, 'edit'])->name('costumer.edit');
+    Route::put('/costumer-problem/update/{id}', [CostumerProblemController::class, 'update'])->name('costumer.update');
 });
 
 

@@ -58,8 +58,30 @@ class CostumerProblemController extends Controller
     {
         $costumerProblem = CostumerProblem::find($id);
 
-        // dd($costumerProblem);
-
         return view("pica.editPica", compact('costumerProblem'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'line' => 'required',
+            'problem' => 'required',
+            'date_problem' => 'required|date',
+            'customer' => 'required',
+            'model' => 'required',
+            'qty' => 'required',
+            'process' => 'required',
+            'date_process' => 'required|date',
+            'status_problem' => 'required',
+            'status_kaizen' => 'required',
+        ]);
+
+        $costumerProblem = CostumerProblem::find($id);
+
+        $costumerProblem->update($request->all());
+
+        // dd($request);
+
+        return redirect()->route('costumer')->with('success', 'Data has been updated successfully!');
     }
 }
