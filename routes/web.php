@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PicaController;
 use App\Http\Controllers\HenkatenController;
 use App\Http\Controllers\ProblemController;
+use App\Http\Controllers\QualityConcernController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -49,6 +50,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/costumer-problem/delete/{id}', [CostumerProblemController::class, 'delete'])->name('costumer.delete');
     Route::get('/costumer-problem/edit/{id}', [CostumerProblemController::class, 'edit'])->name('costumer.edit');
     Route::put('/costumer-problem/update/{id}', [CostumerProblemController::class, 'update'])->name('costumer.update');
+
+    // Quality Concern
+    Route::get('/quality-concern', [QualityConcernController::class, 'index'])->name('quality');
+    Route::post('/quality-concern/store', [QualityConcernController::class, 'store'])->name('quality.store');
 });
 
 
