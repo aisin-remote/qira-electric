@@ -45,6 +45,7 @@
                         <th class="px-4 py-2">Model</th>
                         <th class="px-4 py-2">Part No</th>
                         <th class="px-4 py-2">Product Name</th>
+                        <th class="px-4 py-2">Status</th>
                         <th class="px-4 py-2">Action</th>
                     </tr>
                 </thead>
@@ -59,6 +60,7 @@
                         <td>{{ $data->model }}</td>
                         <td>{{ $data->part_no }}</td>
                         <td>{{ $data->prod_name }}</td>
+                        <td>{{ $data->close_open }}</td>
                         <td class="px-4 py-2">
                             <a href="{{ route('costumer.edit', ['id' => $data->id]) }}" class="text-blue-500 hover:text-blue-700 font-bold">Edit</a><br>
                             <a href="{{ route('costumer.delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
@@ -229,7 +231,7 @@
                     ],
                     "columnDefs": [{
                             "orderable": false,
-                            "targets": [3, 4, 5, ,6 ,7, 8]
+                            "targets": [3, 4, 5, 6, 7, 8, 9]
                         } // Non-orderable columns
                     ]
                 });
