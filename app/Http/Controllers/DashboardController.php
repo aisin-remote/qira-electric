@@ -6,6 +6,7 @@ use App\Models\CostumerProblem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\henkaten;
+use App\Models\QualityConcern;
 use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
@@ -20,7 +21,11 @@ class DashboardController extends Controller
         $ASIP01 = CostumerProblem::where('line', 'ASIP01')->latest('date_problem')->first();
         $ASAN01 = CostumerProblem::where('line', 'ASAN01')->latest('date_problem')->first();
 
-        // dd($ASMP01);
+        $ASMP01_data = QualityConcern::where('line', 'ASMP01')->select('close_open')->get();
+        $ASIP01_data = QualityConcern::where('line', 'ASIP01')->select('close_open')->get();
+        $ASAN01_data = QualityConcern::where('line', 'ASAN01')->select('close_open')->get();
+
+        // dd($ASAN01_data);
 
         // $customerProblems = CustomerProblem::latest('date_of_problem')->take(1)->get();
         // $customerChartData = $this->getCustomerQuantityChartData();
@@ -38,7 +43,7 @@ class DashboardController extends Controller
         // $lineASWPOPData = $this->getLineASWPOP($startMonth, $endMonth);
 
         // return view('dashboard', compact('customerProblems', 'customerChartData', 'customerChartDataYear', 'lineDiecastingProjectData', 'lineMachiningProjectData', 'lineAssemblingProjectData', 'linedctcc', 'lineDCOilpanData', 'linedccsh', 'lineMATCCData', 'lineMAOilpanData', 'lineASTCCData', 'lineASOilpanData', 'lineASWPOPData'));
-        return view('dashboard',  compact('line1', 'line2', 'line3', 'ASMP01', 'ASIP01', 'ASAN01'));
+        return view('dashboard',  compact('line1', 'line2', 'line3', 'ASMP01', 'ASIP01', 'ASAN01', 'ASAN01_data', 'ASIP01_data', 'ASMP01_data'));
     }
 
     //     public function getCustomerQuantityChartData()

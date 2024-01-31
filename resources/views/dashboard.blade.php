@@ -69,6 +69,7 @@
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Quality Concern</h3>
+                        <canvas id="AsmpChart" width="400" height="400"></canvas>
                     </div>
                 </div>
             </div>
@@ -132,6 +133,7 @@
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Quality Concern</h3>
+                        <canvas id="AsipChart" width="400" height="400"></canvas>
                     </div>
                 </div>
             </div>
@@ -195,6 +197,7 @@
                     </div>
                     <div>
                         <h3 class="text-l font-semibold mb-4">Quality Concern</h3>
+                        <canvas id="AsanChart" width="400" height="400"></canvas>
                     </div>
                 </div>
             </div>
@@ -452,4 +455,87 @@
         $("#saveButtonHenkaten3").click(saveCustomInputHenkaten3);
     </script>
 
+    <script>
+        // Ambil data dari PHP dan konversi ke format JavaScript
+        var chartDataAsan = {!! json_encode($ASAN01_data -> pluck('close_open') -> toArray()) !!};
+
+        // Hitung jumlah close dan open
+        var closeCountAsan = chartDataAsan.filter(item => item === 'close').length;
+        var openCountAsan = chartDataAsan.filter(item => item === 'open').length;
+
+        // Data untuk chart
+        var dataAsan = {
+            labels: ['Close', 'Open'],
+            datasets: [{
+                data: [closeCountAsan, openCountAsan],
+                backgroundColor: ['#FF6384', '#36A2EB'], // Warna untuk Close dan Open
+            }],
+        };
+
+        // Konfigurasi chart
+        var configAsan = {
+            type: 'doughnut',
+            data: dataAsan,
+        };
+
+        // Inisialisasi chart pada canvas dengan id "donutChart"
+        var ctxAsan = document.getElementById('AsanChart').getContext('2d');
+        var myChartAsan = new Chart(ctxAsan, configAsan);
+    </script>
+
+    <script>
+        // Ambil data dari PHP dan konversi ke format JavaScript
+        var chartDataAsip = {!! json_encode($ASIP01_data -> pluck('close_open') -> toArray()) !!};
+
+        // Hitung jumlah close dan open
+        var closeCountAsip = chartDataAsip.filter(item => item === 'close').length;
+        var openCountAsip = chartDataAsip.filter(item => item === 'open').length;
+
+        // Data untuk chart
+        var dataAsip = {
+            labels: ['Close', 'Open'],
+            datasets: [{
+                data: [closeCountAsip, openCountAsip],
+                backgroundColor: ['#FF6384', '#36A2EB'], // Warna untuk Close dan Open
+            }],
+        };
+
+        // Konfigurasi chart
+        var configAsip = {
+            type: 'doughnut',
+            data: dataAsip,
+        };
+
+        // Inisialisasi chart pada canvas dengan id "donutChart"
+        var ctxAsip = document.getElementById('AsipChart').getContext('2d');
+        var myChartAsip = new Chart(ctxAsip, configAsip);
+    </script>
+
+    <script>
+        // Ambil data dari PHP dan konversi ke format JavaScript
+        var chartDataAsmp = {!! json_encode($ASMP01_data -> pluck('close_open') -> toArray()) !!};
+
+        // Hitung jumlah close dan open
+        var closeCountAsmp = chartDataAsmp.filter(item => item === 'close').length;
+        var openCountAsmp = chartDataAsmp.filter(item => item === 'open').length;
+
+        // Data untuk chart
+        var dataAsmp = {
+            labels: ['Close', 'Open'],
+            datasets: [{
+                data: [closeCountAsmp, openCountAsmp],
+                backgroundColor: ['#FF6384', '#36A2EB'], // Warna untuk Close dan Open
+            }],
+        };
+
+        // Konfigurasi chart
+        var configAsmp = {
+            type: 'doughnut',
+            data: dataAsmp,
+        };
+
+        // Inisialisasi chart pada canvas dengan id "donutChart"
+        var ctxAsmp = document.getElementById('AsmpChart').getContext('2d');
+        var myChartAsmp = new Chart(ctxAsmp, configAsmp);
+    </script>
 </x-app-layout>
