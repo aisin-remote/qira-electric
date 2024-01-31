@@ -71,7 +71,7 @@
                         </td>
                         <td class="px-4 py-2">
                             <a href="{{ route('quality.detail', ['id' => $data->id]) }}" class="text-blue-500 hover:text-blue-700 font-bold">Detail</a><br>
-                            <a href="{{ route('costumer.delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
+                            <a href="{{ route('quality.delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
                         </td>
                     </tr>
                     @endforeach

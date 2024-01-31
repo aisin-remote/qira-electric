@@ -74,4 +74,18 @@ class QualityConcernController extends Controller
         // return view("qc.qcDetail");
     }
 
+    public function delete($id)
+    {
+        $qualityConcern = QualityConcern::find($id);
+
+        if (!$qualityConcern) {
+            // Handle the case where the record is not found
+            return redirect()->route('costumer')->with('error', 'Record not found.');
+        }
+
+        $qualityConcern->delete();
+
+        // Redirect to a specific page or route after deletion
+        return redirect()->route('quality')->with('success', 'Record deleted successfully.');
+    }
 }

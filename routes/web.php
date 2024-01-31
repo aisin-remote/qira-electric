@@ -55,8 +55,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/quality-concern', [QualityConcernController::class, 'index'])->name('quality');
     Route::post('/quality-concern/store', [QualityConcernController::class, 'store'])->name('quality.store');
     Route::get('/quality-concern/detail/{id}', [QualityConcernController::class, 'detail'])->name('quality.detail');
+    Route::get('/quality-concern/delete/{id}', [QualityConcernController::class, 'delete'])->name('quality.delete');
 });
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
