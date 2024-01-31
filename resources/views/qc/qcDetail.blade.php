@@ -103,5 +103,184 @@
                 <td class="py-1 px-2 border w-2/3">{{ $qualityConcern->pic }}</td>
             </tr>
         </table>
+        <br>
+        <button id="openModalButton" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full flex items-center space-x-2 ml-auto">
+            Edit
+        </button>
     </div>
+
+    <div id="myModal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 overflow-y-auto">
+        <div class="modal-content w-full lg:w-2/3 p-4 max-h-screen">
+            <div class="flex flex-col lg:flex-row text-xs">
+                <div class="lg:w-2/3 p-6 overflow-hidden bg-white rounded-tl-md rounded-bl-md dark:bg-dark-eval-1">
+                    <button id="closeModalButton" class="absolute top-3 right-3 text-gray-600 hover:text-gray-800">
+                    </button>
+                    <form action="{{ route('quality.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="space-y-4">
+                            <!-- Kolom Pertama -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                <div class="font-bold">
+                                    Date of Problem
+                                </div>
+                                <div>
+                                    <input type="date" required name="tanggal" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+
+                                <div class="font-bold">
+                                    No Reg Report
+                                </div>
+                                <div>
+                                    <input type="text" name="no_reg" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+
+                                <div class="font-bold">
+                                    Line
+                                </div>
+                                <div>
+                                    <select name="line" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="ASMP01">ASMP01</option>
+                                        <option value="ASIP01">ASIP01</option>
+                                        <option value="ASAN01">ASAN01</option>
+                                    </select>
+                                </div>
+
+                                <div class="font-bold">
+                                    Model
+                                </div>
+                                <div>
+                                    <input type="text" name="model" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+
+                                <div class="font-bold">
+                                    Part No
+                                </div>
+                                <div>
+                                    <input type="text" name="part_no" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+
+                                <div class="font-bold">
+                                    Konten NG
+                                </div>
+                                <div>
+                                    <input type="text" name="konten_ng" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+
+                                <div class="font-bold">
+                                    Rootcause NG
+                                </div>
+                                <div>
+                                    <input type="text" required name="rootcause_ng" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+
+                                <div class="font-bold">
+                                    Source
+                                </div>
+                                <div>
+                                    <input type="text" required name="source" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <!-- Kolom Kedua -->
+                <div class="lg:w-2/3 p-6 overflow-hidden bg-white rounded-tr-md rounded-br-md dark:bg-dark-eval-1">
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                            <div class="font-bold">
+                                Penyebab
+                            </div>
+                            <div>
+                                <input type="text" required name="penyebab" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+
+                            <div class="font-bold">
+                                Kelolosan
+                            </div>
+                            <div>
+                                <input type="text" required name="kelolosan" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+
+                            <div class="font-bold">
+                                NG Quantity
+                            </div>
+                            <div>
+                                <input type="number" required name="ng_qty" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+
+                            <div class="font-bold">
+                                Sortir
+                            </div>
+                            <div>
+                                <input type="text" required name="sortir" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+
+                            <div class="font-bold">
+                                Sortir Result
+                            </div>
+                            <div>
+                                <input type="text" required name="sortir_result" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+
+                            <div class="font-bold">
+                                Close/Open
+                            </div>
+                            <div>
+                                <select name="close_open" required class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="open">Open</option>
+                                    <option value="close">Close</option>
+                                </select>
+                            </div>
+
+                            <div class="font-bold">
+                                Progress
+                            </div>
+                            <div>
+                                <input type="text" required name="progress" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+
+                            <div class="font-bold">
+                                PIC
+                            </div>
+                            <div>
+                                <input type="text" required name="pic" class="w-full border-2 border-gray-300 px-3 py-2 rounded-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-end items-end">
+                        <input type="submit" value="Simpan" class="p-2 bg-green-300 inline-block font-bold text-white mx-2 mt-3 rounded-md cursor-pointer hover:bg-green-500">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var openModalButton = document.getElementById("openModalButton");
+        var closeModalButton = document.getElementById("closeModalButton");
+        var modal = document.getElementById("myModal");
+
+        // @if($errors -> any())
+        // document.addEventListener("DOMContentLoaded", function() {
+        // modal.classList.remove("hidden");
+        // });
+        // @endif
+
+        openModalButton.addEventListener("click", function() {
+            modal.classList.remove("hidden");
+        });
+
+        closeModalButton.addEventListener("click", function() {
+            modal.classList.add("hidden");
+        });
+
+        modal.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.classList.add("hidden");
+            }
+        });
+    </script>
 </x-app-layout>
