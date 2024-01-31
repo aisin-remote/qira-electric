@@ -60,9 +60,17 @@
                         <td>{{ $data->model }}</td>
                         <td>{{ $data->part_no }}</td>
                         <td>{{ $data->prod_name }}</td>
-                        <td>{{ $data->close_open }}</td>
+                        <td>
+                            @if ($data->close_open == 'close')
+                            <x-heroicon-o-x-circle class="h-5 w-5 text-red-500" /> <!-- Ganti dengan kelas Heroicon untuk ikon tertutup -->
+                            @elseif ($data->close_open == 'open')
+                            <x-heroicon-o-check-circle class="h-5 w-5 text-green-500" /> <!-- Ganti dengan kelas Heroicon untuk ikon terbuka -->
+                            @else
+                            {{ $data->close_open }}
+                            @endif
+                        </td>
                         <td class="px-4 py-2">
-                            <a href="{{ route('costumer.edit', ['id' => $data->id]) }}" class="text-blue-500 hover:text-blue-700 font-bold">Edit</a><br>
+                            <a href="{{ route('quality.detail', ['id' => $data->id]) }}" class="text-blue-500 hover:text-blue-700 font-bold">Detail</a><br>
                             <a href="{{ route('costumer.delete', ['id' => $data->id]) }}" class="text-red-500 hover:text-red-700 font-bold">Hapus</a>
                         </td>
                     </tr>

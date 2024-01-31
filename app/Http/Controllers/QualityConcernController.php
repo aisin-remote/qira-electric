@@ -63,4 +63,15 @@ class QualityConcernController extends Controller
         // Redirect back to the form with a success message
         return redirect()->route('quality')->with('success', 'Data has been saved successfully!');
     }
+
+    public function detail($id)
+    {
+        $qualityConcern = QualityConcern::find($id);
+
+        // dd($qualityConcern);
+
+        return view("qc.qcDetail", compact('qualityConcern'));
+        // return view("qc.qcDetail");
+    }
+
 }

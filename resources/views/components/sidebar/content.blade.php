@@ -13,6 +13,12 @@
         </x-slot>
     </x-sidebar.link>
 
+    <x-sidebar.link title="Quality Concern" href="{{ route('quality') }}" :isActive="request()->routeIs('quality')">
+        <x-slot name="icon">
+            <x-css-board class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+        </x-slot>
+    </x-sidebar.link>
+
     <!-- <x-sidebar.dropdown title="Check Sheet">
         <x-slot name="icon">
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
